@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-     background: url(hosp.png) no-repeat; /*bg.png */
+     background: url(hosp.png) no-repeat; 
     background-size: cover;
     background-position: center;
   }
@@ -25,13 +25,25 @@
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(9px);
-    color: #fff;
+    color: #fcfcfc;
     border-radius: 12px;
     padding: 30px 40px;
+    
+  }
+  .image{
+    display:flex;
+    margin: 50px;
   }
   .wrapper h1{
     font-size: 36px;
     text-align: center;
+    color: #fcfcfc;
+  }
+  .wrapper h2{
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+
   }
   .wrapper .input-box{
     position: relative;
@@ -87,13 +99,14 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     cursor: pointer;
     font-size: 16px;
-    color: #333;
+    /* color: #333; */
     font-weight: 600;
   }
   .wrapper .register-link{
     font-size: 14.5px;
     text-align: center;
     margin: 20px 0 15px;
+    color:black;
   
   }
   .register-link p a{

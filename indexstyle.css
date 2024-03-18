@@ -6,30 +6,61 @@
   }
 
   header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .buttons {
+    display: flex;
+  }
+  
+  .marquee-container {
+    padding: 10px;
+  }
+  
+  .btn3 {
+    margin-left: 828px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 218px;
+  }
+  
+  .rounded-image {
+    border-radius: 50%;
+  }
+  
+
+  /* header {
     top: 0;
     background-color :#a5db63;
-    /* #6ec007; */
-     /* #247102 ;
-     #28574E; */
     padding: 15px;
     text-align: left;
     font-size: 20px;
     color: white;
     border-radius: 6px;
     height: 180px;
-  }
+  } */
 
   .rounded-image {
     border-radius: 20%; 
     overflow: hidden; 
   }
-
+/* 
   .info {
     display: flex;
-    
     align-items: center;
 
-  }
+  } */
   .mar p{ 
      color: yellow;
   }
@@ -79,8 +110,8 @@
 
   .navbar .social_media{
     position: absolute;
-      /* bottom: 0; */
-      /* height: 1008px; */
+      bottom: 0;
+    height:  18px; 
     left: 7%; 
     transform: translateX(-50%);
     display: flex;
@@ -120,18 +151,17 @@
     cursor: pointer;
   }
 
-  .btn3{
-    padding: 5px 2px;
+  /* .btn3{
+    padding: 7px 4px;
     margin-left: 800px;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 16px solid black;
     background:#b8c8d4;
-    /* background-color: ; */
     text-decoration: none;
     display: inline-block ;
-    width: 90px;
+    width: 100px;
     cursor: pointer;
-  }
+  } */
 
   .flex-container {
     width: 100%;
@@ -197,7 +227,8 @@
     text-decoration: none;
     border-radius: 4px;
     margin-top: 16px;
-    color: #fff
+    color: #fff;
+    align-content: center;
   }
 
   .dcontent1,
@@ -214,7 +245,7 @@
       margin-top: 1020px;
       padding: 16px;
        background-color: #777;
-       padding: 1px;
+       padding: 5px;
        text-align: center;
        color: white;
       }

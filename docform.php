@@ -1,121 +1,81 @@
 <?php
- $insert = false;
- if(isset($_POST['name'])  && isset($_POST['age']) && isset($_POST['contact']) && isset($_POST['sugg']) && isset($_POST['blood']) )
-{
-   $server = "localhost";
-   $username = "root";
-   $password = "";
-   
-   $con = mysqli_connect($server, $username, $password);
-      
-   if(!$con)
-   {
-      die("Connection has failed ".$mysqli_connect_error());
-   }
+$insert = false;
+if(isset($_POST['name']) && isset($_POST['degree']) && isset($_POST['hosp']) && isset($_POST['fees']) && isset($_POST['city'])) {
+    $server = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "sydb";
 
-   $name = $_POST['name'];
-   $age = $_POST['age'];
-   $contact = $_POST['contact'];
-   $sugg = $_POST['sugg'];
-   $blood = $_POST['blood'];
+    $con = mysqli_connect($server, $username, $password, $database);
 
-   $sql = $con->prepare("INSERT INTO `sydb`.`registration` (`name`, `age`, `contact`, `sugg`, `blood`) VALUES (?,?,?,?,? )");
+    if(!$con) {
+        die("Connection has failed ".mysqli_connect_error());
+    }
+    else {
+          echo "Successfully Connection :) ";
+      }
 
-   $sql->bind_param("siiss", $name, $age, $contact, $sugg, $blood);
+    $name = $_POST['name'];
+    $degree = $_POST['degree'];
+    $hosp = $_POST['hosp'];
+    $fees = $_POST['fees'];
+    $city = $_POST['city'];
 
-if( $sql->execute() )
-{
-   $insert = true ; 
+    $sql = $con->prepare("INSERT INTO `docform` (`name`, `degree`, `hosp`, `fees`, `city`) VALUES (?, ?, ?, ?, ?)");
+
+    $sql->bind_param("sssis", $name, $degree, $hosp, $fees, $city);
+
+    if($sql->execute()) {
+        $insert = true;
+        header("Location: index.html");
+        exit(); // Exit to prevent further execution
+    } else {
+        echo "ERROR: ".$sql->error;
+    }
+
+    $sql->close(); // Close the prepared statement
+    $con->close(); // Close the connection
 }
-else
-{
-   echo "ERROR $sql <br> $con->error";
-}
-
-$con->close() ;
-}
-
-
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Docform</title>
-     <link rel="stylesheet" href="docform.css">
-
- <script  language="javascript" >
-    
-     function submitform()
-      {
-          if( iscontact(event))
-          {
-            alert("Registration Successful..!"); 
-          }
-      }
- 
-      function iscontact(event)
-      {
-       var cont = myForm.contact.value ;
- 
-      if(cont.length <= 4)
-      {
-       alert("Contact must contain at least 10 letters ");
-       myForm.cont.value="";
-       myForm.cont.focus();
- 
-       event.preventDefault();
-      
-       return false;
-      }
-      else
-      return true;
-      }
-
- </script>
-
- <!-- <script language="javascript" > function submitform(event) { return true; } function iscontact(event) ///   iscontact(event) &&   ////{ var cont = myForm.contact.value ; if(cont.length <= 4) { alert("Contact must contain at least 10 letters "); myForm.contact.value=""; myForm.contact.focus(); event.preventDefault(); return false; } else return true; } </script> -->
-
-
+    <title>Doctor Form </title>
+   <link rel="stylesheet" href="reg.css">
 </head>
-
 <body>
+    <form id="doctorForm">
+        <h2> Doctor Registeration Form</h2> 
 
-    <form name ="myForm" action = "<?php echo($_SERVER["PHP_SELF"]); ?>" method="post" onsubmit="return submitform()">   
-        <h2 > D-Slot Registeration Form</h2>  
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    
+        <label for="degree">Degree:</label>
+        <input type="text" id="degree" name="degree" required>
+    
+        <label for="hosp">Hospital:</label>
+        <input type="text" id="hosp" name="hosp" required>
 
-        <label>Enter your name : </label>
-        <input type="text" name="name" id="name" required>
+        <label for="fees">Fees:</label>
+        <input type="number" id="fees" name="fees" required>
 
-        <label>Enter your age :</label>
-        <input type="number" name="age" id="age" required>
+        <label for="citygrp">City:</label>
+        <select id="citygrp" name="city" >
+             <option value="" selected disabled>Available in these cities only: </option>
+             <option value="pune" > PUNE </option>
+             <option value="jalna" >  JALNA</option>
+        </select>
 
-        <label>Enter your contact no :</label>
-        <input type="phone" name="contact" id="contact">
-
-        <label>Any Queries or suggestion :</label>
-        <input type="text" name="sugg" id="sugg" required>
-
-
-    <label for="bloodGroup">Select Blood Group:</label>
-<select id="bloodGroup" name="blood" >
-  <option value="" selected disabled>Choose Blood Group</option>
-  <option value="A+" >    A+</option>
-  <option value="B+" >  B+</option>
-  <option value="AB+">  AB+</option>
-  <option value="O+" >  O+</option>
-  <option value="A-" >  A-</option>
-  <option value="B-" >  B-</option>
-  <option value="AB-">  AB-</option>
-  <option value="O-" >    O-</option>
-</select>
-
-    <br><br>
-    <button onclick="submitform()"> Confirm </button>
+   <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+    
+        <button type="submit">Submit</button>
     </form>
-
 </body>
-
 </html>
+
+
