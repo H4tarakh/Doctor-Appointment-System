@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Check if the entered password matches the stored password
         if ($enteredPassword == $row['password']) {
             // Valid credentials, redirect to a new page (e.g., dashboard.php)
-            header("Location: index.html");
+            header("Location: selection.php");
             exit();
         } else {
             echo "Invalid password!";
@@ -115,7 +115,7 @@ mysqli_close($con);
              <!-- <h3> D-Slot </h3> -->
         </div>
        
-        <form action="index.html" method="post">
+        <form action="selection.php" method="post">
 
             <h2>Welcome back , Sign-in to continue</h2>
             <div class="input-box">
@@ -126,7 +126,7 @@ mysqli_close($con);
                 <i class="fas fa-lock"></i> 
                  <input type="password" placeholder="Password" name="password" required><br>
             </div>
-            <button type="submit" class="btn" name="submit" value="submit" onclick="index.html">Login</button><br>
+            <button type="submit" class="btn" name="submit" value="submit" onclick="selection.php">Login</button><br>
             <div class="remember">
             </div>
             <div class="register-link"><p>Don't have an account?<a href="login.html" > Sign up here.</a></p> 

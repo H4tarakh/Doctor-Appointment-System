@@ -9,7 +9,7 @@ if(isset($_POST['name']) && isset($_POST['degree']) && isset($_POST['hosp']) && 
     $con = mysqli_connect($server, $username, $password, $database);
 
     if(!$con) {
-        die("Connection has failed ".mysqli_connect_error());
+        die("Connection has failed ".$mysqli_connect_error());
     }
     else {
           echo "Successfully Connection :) ";
@@ -21,19 +21,19 @@ if(isset($_POST['name']) && isset($_POST['degree']) && isset($_POST['hosp']) && 
     $fees = $_POST['fees'];
     $city = $_POST['city'];
 
-    $sql = $con->prepare("INSERT INTO `docform` (`name`, `degree`, `hosp`, `fees`, `city`) VALUES (?, ?, ?, ?, ?)");
+    $sql = $con->prepare("INSERT INTO `sydb`.`docform` (`name`, `degree`, `hosp`, `fees`, `city`) VALUES (?, ?, ?, ?, ?)");
 
     $sql->bind_param("sssis", $name, $degree, $hosp, $fees, $city);
 
     if($sql->execute()) {
         $insert = true;
         header("Location: index.html");
-        exit(); // Exit to prevent further execution
+       // exit(); // Exit to prevent further execution
     } else {
-        echo "ERROR: ".$sql->error;
+        echo "ERROR: ".$con->error;
     }
 
-    $sql->close(); // Close the prepared statement
+  //  $sql->close(); // Close the prepared statement
     $con->close(); // Close the connection
 }
 ?>
@@ -48,7 +48,7 @@ if(isset($_POST['name']) && isset($_POST['degree']) && isset($_POST['hosp']) && 
    <link rel="stylesheet" href="reg.css">
 </head>
 <body>
-    <form id="doctorForm">
+    <form id="doctorForm" method=post>
         <h2> Doctor Registeration Form</h2> 
 
         <label for="name">Name:</label>
@@ -70,8 +70,8 @@ if(isset($_POST['name']) && isset($_POST['degree']) && isset($_POST['hosp']) && 
              <option value="jalna" >  JALNA</option>
         </select>
 
-   <label for="photo">Photo:</label>
-        <input type="file" id="photo" name="photo" accept="image/*" required>
+   <!-- <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required> -->
     
         <button type="submit">Submit</button>
     </form>
