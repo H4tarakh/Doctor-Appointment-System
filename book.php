@@ -1,6 +1,6 @@
 <?php
  $insert = false;
- if(isset($_POST['name'])  && isset($_POST['age']) && isset($_POST['contact']) && isset($_POST['sugg']) && isset($_POST['slot']) )
+ if(isset($_POST['name'])  && isset($_POST['age']) && isset($_POST['contact']) && isset($_POST['sugg']) && isset($_POST['slot']) && isset($_POST['date']))
 {
    $server = "localhost";
    $username = "root";
@@ -18,15 +18,16 @@
    $contact = $_POST['contact'];
    $sugg = $_POST['sugg'];
    $slot = $_POST['slot'];
+   $date = $_POST['date'];
 
-   $sql = $con->prepare("INSERT INTO `sydb`.`registration` (`name`, `age`, `contact`, `sugg`, `slot`) VALUES (?,?,?,?,? )");
+   $sql = $con->prepare("INSERT INTO `sydb`.`registration` (`name`, `age`, `contact`, `sugg`, `slot`, `date`) VALUES (?,?,?,?,?,? )");
 
-   $sql->bind_param("siiss", $name, $age, $contact, $sugg, $slot);
+   $sql->bind_param("siisss", $name, $age, $contact, $sugg, $slot,$date);
 
 if( $sql->execute() )
 {
    $insert = true ; 
-   header("Location: index.html");
+   header("Location: index.php");
 }
 else
 {
@@ -83,7 +84,7 @@ $con->close() ;
 
         <label>Enter your name : </label>
         <input type="text" name="name" id="name" required>
-3
+
         <label>Enter your age :</label>
         <input type="number" name="age" id="age" required>
 
@@ -93,14 +94,17 @@ $con->close() ;
         <label>Any Queries or suggestion :</label>
         <input type="text" name="sugg" id="sugg" required>
 
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
 
     <label for="slotsgrp">Select Available Slot :</label>
 <select id="slotsgrp" name="slot" >
   <option value="" selected disabled>Choose Available Slot </option>
-  <option value="8:00 AM - 10:00AM" >    8:00 AM - 10:00AM</option>
-  <option value="11:00 PM - 02:00PM" >  11:00 PM - 02:00PM</option>
-  <option value="03:00 PM - 05:00PM">  03:00 PM - 05:00PM</option>
-  <option value="06:00 PM - 08:00PM" >  06:00 PM - 08:00PM</option>
+  <option value="1" >    8:00 AM - 10:00AM</option>
+  <option value="2" >  11:00 PM - 02:00PM</option>
+  <option value="3">  03:00 PM - 05:00PM</option>
+  <option value="4" >  06:00 PM - 08:00PM</option>
 </select>
 
     <br><br>
