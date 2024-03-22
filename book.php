@@ -45,7 +45,7 @@ $con->close() ;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
-     <link rel="stylesheet" href="reg.css">
+     <link rel="stylesheet" href="book.css">
 
 
  <script  language="javascript" >
@@ -79,11 +79,11 @@ $con->close() ;
 <body>
 
     <form name ="myForm" action = "<?php echo($_SERVER["PHP_SELF"]); ?>" method="post" >   
-        <h2 > D-Slot Registeration Form</h2>  
+        <h2 > Doctor Booking Form</h2>  
 
         <label>Enter your name : </label>
         <input type="text" name="name" id="name" required>
-
+3
         <label>Enter your age :</label>
         <input type="number" name="age" id="age" required>
 
