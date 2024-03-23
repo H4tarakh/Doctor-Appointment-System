@@ -42,8 +42,9 @@ $result = $conn->query($sql);
   </header>
 
   <div class="marquee-container">
-    <p class="marquee">Dr. Akanksha Sharma will visit Ruby Hospital on 5th June.</p>
-  </div>
+    <marquee>
+      <p>Dr. Akanksha Sharma will visit Ruby Hospital on 5th June.</p>
+    </marquee>
 
   <section>
     <nav class="navbar">

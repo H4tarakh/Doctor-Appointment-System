@@ -42,20 +42,25 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Today's Appointments</title>
+    <link rel="stylesheet" href="today.css">
 </head>
 <body>
-    <h1>Today's Appointments</h1>
+    <h1>Today's Appointments </h1>
 
     <?php
     // Display appointments grouped by date
     foreach ($appointments_by_date as $date => $appointments) {
         echo "<h2>$date</h2>"; // Display date
+        echo '8:00 AM - 10:00AM';
+       
         echo "<ul>";
-        foreach ($appointments as $appointment) {
+        foreach ($appointments as $appointment) 
+        {
             echo "<li>{$appointment['name']} - {$appointment['slot']}</li>"; // Display appointment details
         }
         echo "</ul>";
     }
+
     ?>
 </body>
 </html>

@@ -101,10 +101,10 @@ $con->close() ;
     <label for="slotsgrp">Select Available Slot :</label>
 <select id="slotsgrp" name="slot" >
   <option value="" selected disabled>Choose Available Slot </option>
-  <option value="1" >    8:00 AM - 10:00AM</option>
-  <option value="2" >  11:00 PM - 02:00PM</option>
-  <option value="3">  03:00 PM - 05:00PM</option>
-  <option value="4" >  06:00 PM - 08:00PM</option>
+  <option value="8:00 AM - 10:00AM" >    8:00 AM - 10:00AM</option>
+  <option value=" 11:00 PM - 02:00PM" >  11:00 PM - 02:00PM</option>
+  <option value="03:00 PM - 05:00PM">  03:00 PM - 05:00PM</option>
+  <option value="06:00 PM - 08:00PM" >  06:00 PM - 08:00PM</option>
 </select>
 
     <br><br>

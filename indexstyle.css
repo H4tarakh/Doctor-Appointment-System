@@ -3,249 +3,192 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-  }
+}
 
-  header {
+body {
+    background-color: #f0f0f0;
+}
+
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-  }
-  
-  .info {
-    display: flex;
-    align-items: center;
-  }
-  
-  .buttons {
-    display: flex;
-  }
-  
-  .marquee-container {
-    padding: 10px;
-  }
-  
-  .btn3 {
-    margin-left: 300px;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+}
+
+.info img {
+    width: 50px; /* Adjust size as needed */
+    border-radius: 50%;
+}
+
+.info h1 {
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+.btn3 {
     padding: 8px 16px;
     background-color: #007bff;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    width: 218px;
-  }
-  
-  .rounded-image {
-    border-radius: 50%;
-  }
-  
+    margin-left: 20px;
+}
 
-  /* header {
-    top: 0;
-    background-color :#a5db63;
-    padding: 15px;
-    text-align: left;
-    font-size: 20px;
+.marquee-container {
+    background-color: #ff7f50;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.marquee {
     color: white;
-    border-radius: 6px;
-    height: 180px;
-  } */
+    font-size: 18px;
+    font-weight: bold;
+}
 
-  .rounded-image {
-    border-radius: 20%; 
-    overflow: hidden; 
-  }
-/* 
-  .info {
-    display: flex;
-    align-items: center;
-
-  } */
-  .mar p{ 
-     color: yellow;
-  }
-
-  .navbar {
+.navbar {
     float: left;
     width: 19%;
-    background:#b8c8d4;
+    background: #b8c8d4;
     padding: 1%;
-    height: 1008px;
+    height: 100%;
     border-radius: 6px;
- 
-  }
+}
 
-  .navbar h3{
-    color:#fff;
+.navbar h3 {
+    color: #fff;
     text-transform: uppercase;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
-  }
-  
-  .dlist ul li{
+}
+
+.dlist ul li {
     list-style: none;
     margin-top: 20px;
-    color:white;
-    display : inline-block;
+}
 
-  }
-  .dlist ul li a{
-    display :block;
-   text-decoration: none;
-   font-size: 19px;
-   margin: 10px;
-   padding: 5px;
-/* color: #91b880; */
-   /* color: #007057; */
-   color : #323E3c ;
-    
-  }
-  .dlist ul li a .fas{
-    width : 25px;
-  }
-  .dlist ul li a :hover{
-    background: #fff;
-  }
+.dlist ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #323E3c;
+    display: block;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
 
-  .navbar .social_media{
+.dlist ul li a i {
+    margin-right: 10px;
+}
+
+.dlist ul li a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.social_media {
     position: absolute;
-      bottom: 0;
-    height:  18px; 
-    left: 7%; 
+    bottom: 10px;
+    left: 50%;
     transform: translateX(-50%);
     display: flex;
-  } 
-  
-  .navbar .social_media a{
+}
+
+.social_media a {
     display: block;
     width: 40px;
-    background:#4f7e8dd6;
     height: 40px;
-    line-height: 45px;
+    line-height: 40px;
     text-align: center;
     margin: 0 5px;
-    color: #000000;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-  }
-  section {
+    color: #000;
+    background-color: #4f7e8dd6;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.social_media a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+section {
     float: left;
     padding: 10px;
-    width: 81%;
+    width: 80%;
     background-color: #fff;
-    height: 560px;
-  }
+    min-height: 1000px;
+    margin-top: 20px;
+}
 
-  .city {
+.city {
     font-size: 25px;
-  }
-
-  .btn {
-    padding: 4px;
     text-align: center;
-    border-radius: 6px;
-    /* background-color: #64daaf;  */
-    display: inline-block;
-    width: 150px;
-    cursor: pointer;
-  }
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
 
-  /* .btn3{
-    padding: 7px 4px;
-    margin-left: 800px;
-    text-align: center;
-    border-radius: 16px solid black;
-    background:#b8c8d4;
-    text-decoration: none;
-    display: inline-block ;
-    width: 100px;
-    cursor: pointer;
-  } */
-
-  .flex-container {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-  }
-
-  .flex-box {
-    width: 200px;
-    height: 200px;
-    background:
-      linear-gradient(green, grey);
-    color: white;
-    font-size: 25px;
-    text-align: left;
-    line-height: 200px;
-    border-radius: 20px;
-    margin: 10px;
-  }
-
-  .dcontainer {
+.dcontainer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    /* margin-top: 5px; */
-  }
+}
 
-  .dbox {
-    width: 355px;
-    background-color: #f0f0f0;
+.dbox {
+    width: 300px;
+    background-color: #f8f9fa;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     margin: 20px;
-  }
+}
 
-  .dbox img {
+.dbox img {
     width: 100%;
     height: auto;
-  }
+    border-radius: 8px 8px 0 0;
+}
 
-  .dcontainer {
+.dcontent {
     padding: 16px;
-  }
+}
 
-  .dcontainer h2 {
-    font-size: 28px;
+.dcontent h2 {
+    font-size: 20px;
     margin-bottom: 8px;
-  }
+    color: #333;
+}
 
-  .dcontainer p {
+.dcontent p {
     color: #666;
     font-size: 15px;
-    line-height: 1.3;
-  }
+    margin-bottom: 10px;
+}
 
-  .dcontainer .btn2 {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #333;
+.btn2 {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
     text-decoration: none;
-    border-radius: 4px;
-    margin-top: 16px;
-    color: #fff;
-    align-content: center;
-  }
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
 
-  .dcontent1,
-  .dcontent2,
-  .dcontent3,
-  .dcontent4 {
-    display: flex;
-  }
-  .dcontent1 h2 .fas{
-    width : 25px;
-  }
-  
-  footer {
-      margin-top: 1020px;
-      padding: 16px;
-       background-color: #777;
-       padding: 5px;
-       text-align: center;
-       color: white;
-      }
+.btn2:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    clear: both;
+    padding: 16px;
+    background-color: #333;
+    text-align: center;
+    color: white;
+}

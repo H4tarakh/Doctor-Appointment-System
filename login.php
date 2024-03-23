@@ -16,10 +16,9 @@
 
 <body>
     <div class="wrapper">
-        <div class="img">
+        <!-- <div class="img">
             <img src="plogo.png" class="image" alt="LOGO" style="width:40%">
-             <!-- <h3> D-Slot </h3> -->
-        </div>
+        </div> -->
        
         <form method="post">
 
