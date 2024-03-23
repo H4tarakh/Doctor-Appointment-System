@@ -12,6 +12,7 @@
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $name = $_POST["name"];
+            $cont = $_POST["cont"];
             $address = $_POST["address"];
             $pincode = $_POST["pincode"];
             $medicines = $_POST["medicine"];
@@ -19,6 +20,7 @@
 
             // Display billing details
             echo "<p><strong>Name:</strong> $name</p>";
+            echo "<p><strong>Contact No:</strong> $cont</p>";
             echo "<p><strong>Address:</strong> $address</p>";
             echo "<p><strong>Pincode:</strong> $pincode</p>";
             echo "<h3>Ordered Medicines:</h3>";

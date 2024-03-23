@@ -51,7 +51,6 @@ $conn->close();
     // Display appointments grouped by date
     foreach ($appointments_by_date as $date => $appointments) {
         echo "<h2>$date</h2>"; // Display date
-        echo '8:00 AM - 10:00AM';
        
         echo "<ul>";
         foreach ($appointments as $appointment) 

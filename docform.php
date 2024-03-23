@@ -78,7 +78,7 @@ if(isset($_POST['name']) && isset($_POST['degree']) && isset($_POST['hosp']) && 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Form </title>
-   <link rel="stylesheet" href="reg.css">
+   <link rel="stylesheet" href="book.css">
 </head>
 <body>
     <form id="doctorForm" method=post enctype="multipart/form-data" >
