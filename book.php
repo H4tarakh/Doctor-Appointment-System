@@ -45,7 +45,7 @@ $con->close() ;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
+    <title>Slot Booking Form</title>
      <link rel="stylesheet" href="book.css">
 
 
@@ -80,7 +80,12 @@ $con->close() ;
 <body>
 
     <form name ="myForm" action = "<?php echo($_SERVER["PHP_SELF"]); ?>" method="post" >   
-        <h2 > Doctor Booking Form</h2>  
+        <h2 >   Doctor Booking Form </h2>  
+
+        <h2> You have choose Dr <?php session_start();
+                    $doc_name= $_SESSION['doc_name'];
+                    echo $doc_name?> </h2>
+
 
         <label>Enter your name : </label>
         <input type="text" name="name" id="name" required>

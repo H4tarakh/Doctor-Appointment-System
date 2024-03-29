@@ -20,9 +20,10 @@
    $username = $_POST['username'];
    $email = $_POST['email'];
    $password = $_POST['password'];
+   $who = 'patient';
    
-   $sql = "INSERT INTO `sydb`.`login` (`username`, `email`, `password`) VALUES ('$username', '$email', '$password');";
-   
+   $sql = "INSERT INTO `sydb`.`login` (`who`,`username`, `email`, `password`) VALUES ('$who' ,'$username', '$email', '$password');";
+
    //   Execute the Query
    if( $con->query($sql) == true )
    {
@@ -81,7 +82,7 @@
     <div class="wrapper">
       <form name = "myForm" action = "<?php echo($_SERVER["PHP_SELF"]); ?>" method="post">
         
-        <h1>Sign-up</h1>
+        <h2>Patient Registration </h2>
         <div class="input-box">
             <i class="fa-solid fa-user"></i>
           <input type="text" id="username" name="username" placeholder="Username" required>

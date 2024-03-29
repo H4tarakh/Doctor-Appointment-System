@@ -43,9 +43,10 @@
             if (role === 'doctor') {
                 window.open('docform.php', '_blank');
             } else if (role === 'patient') {
-                window.open('index.php', '_blank');
+                window.open('sign.php', '_blank');
             }
         }
     </script>
 </body>
 </html>
+

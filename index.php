@@ -1,5 +1,7 @@
 
 <?php
+  session_start();
+
 
 $server = "localhost"; 
 $user = "root"; 
@@ -17,12 +19,8 @@ if ($conn->connect_error) {
 
 $sql = "SELECT * FROM docform";
 $result = $conn->query($sql);
-
-
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,10 +32,15 @@ $result = $conn->query($sql);
 <body>
   <header>
     <div class="info">
-      <img src="llogo.png" width="10%" class="rounded-image">
+      <div class="logo-container">
+        <img src="llogo.png" width="10%" class="rounded-image">
       <h1>D- Slot booking</h1>
-      <a href="medsdel.html" class="btn3">MEDS Delivery</a>
+      </div>
+      <div class="func">
+        <a href="medsdel.html" class="btn3">MEDS Delivery</a>
       <a href="about.html" class="btn3">About us</a>
+      </div>
+      
     </div>
   </header>
 
@@ -45,8 +48,8 @@ $result = $conn->query($sql);
     <marquee>
       <p>Dr. Akanksha Sharma will visit Ruby Hospital on 5th June.</p>
     </marquee>
-
-  <section>
+    </div>
+  <section class="main-container">
     <nav class="navbar">
       <h3>Specialists : </h3><br>
       <div class="dlist">
@@ -80,7 +83,10 @@ $result = $conn->query($sql);
             <div class="dcontent">
               <div class="dcontent1">
                 <i class="fa-solid fa-user-doctor"></i>
-                <h2> &nbsp<?php echo $row["name"]; ?> </h2>
+                <h2> &nbsp<?php 
+              
+                $_SESSION['doc_name'] = $row["name"];
+                echo $row["name"]; ?> </h2>
               </div>
 
               <div class="dcontent2">

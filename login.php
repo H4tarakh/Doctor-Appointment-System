@@ -33,6 +33,7 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $enteredUsername = $_POST['username'];
         $enteredPassword = $_POST['password'];
+       
 
         // Fetch data from the database based on the entered username
         $sql = "SELECT * FROM `login` WHERE `username` = '$enteredUsername'";
@@ -42,10 +43,20 @@
         if ($result && mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
 
+             // Retrieve 'who' value from the fetched row
+              $who = $row['who'];
+
         // Check if the entered password matches the stored password
         if ($enteredPassword == $row['password']) {
             // Valid credentials, redirect to a new page (e.g., dashboard.php)
-            header("Location: selection.php");
+
+            if($who == 'doctor')
+            {
+                header("Location: today.php");
+            }
+            else{
+                header("Location: index.php");
+            }
             exit();
         } else {
             echo "<script> alertfun(); </script>";
@@ -59,7 +70,7 @@
 
 ?>
 
-            <h2>Welcome back , Sign-in to continue</h2>
+            <h2>Welcome back , Login to continue</h2>
             <div class="input-box">
                  <i class="fas fa-user"></i> 
                  <input type="text" id="username" placeholder="Username" name="username" required><br>
@@ -69,11 +80,10 @@
                  <input type="password" placeholder="Password" name="password" required><br>
             </div>
             <button type="submit" class="btn" name="submit" value="submit" onclick="selection.php">Login</button><br>
-            <div class="remember">
-            </div>
-            <div class="register-link"><p>Don't have an account?<a href="login.html" > Sign up here.</a></p> 
+            
+            <div class="register-link"><p>Don't have an account?<a href="selection.php" > Sign up here.</a></p> 
             </label>
-        </div>
+             </div>
 
         </div>
     </form>
