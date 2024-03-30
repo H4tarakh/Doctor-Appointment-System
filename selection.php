@@ -41,9 +41,9 @@
 
             var role = document.querySelector('input[name="role"]:checked').value;
             if (role === 'doctor') {
-                window.open('docform.php', '_blank');
+                window.open('dreg.php', '_blank');
             } else if (role === 'patient') {
-                window.open('sign.php', '_blank');
+                window.open('preg.php', '_blank');
             }
         }
     </script>

@@ -52,10 +52,10 @@
 
             if($who == 'doctor')
             {
-                header("Location: today.php");
+                header("Location: app.php");
             }
             else{
-                header("Location: index.php");
+                header("Location: home.php");
             }
             exit();
         } else {
