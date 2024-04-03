@@ -16,14 +16,14 @@
             <div class="options">
                 <label class="option-box" for="doctor">
                     <img src="demo1.jpg" alt="Doctor">
-                    <p>Doctor</p>
+                    <p><strong>Doctor</strong> </p>
                     <div class="radio-container">
                         <input type="radio" id="doctor" name="role" value="doctor">
                     </div>
                 </label>
                 <label class="option-box" for="patient">
                     <img src="demo3.png"  alt="Patient">
-                    <p>Patient</p>
+                    <p><strong>Patient</strong></p>
                     <div class="radio-container">
                         <input type="radio" id="patient" name="role" value="patient">
                     </div>

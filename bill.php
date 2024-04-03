@@ -18,7 +18,6 @@
             $medicines = $_POST["medicine"];
             $quantities = $_POST["quantity"];
 
-            // Display billing details
             echo "<p><strong>Name:</strong> $name</p>";
             echo "<p><strong>Contact No:</strong> $cont</p>";
             echo "<p><strong>Address:</strong> $address</p>";

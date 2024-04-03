@@ -1,21 +1,16 @@
-
 <?php
-  session_start();
-
+session_start();
 
 $server = "localhost"; 
 $user = "root"; 
 $password = ""; 
 $database = "sydb"; 
 
-// Create connection
 $conn = new mysqli($server, $user, $password, $database);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
 
 $sql = "SELECT * FROM docform";
 $result = $conn->query($sql);
@@ -25,7 +20,7 @@ $result = $conn->query($sql);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <title>Index</title>
+  <title>Home</title>
   <link rel="stylesheet" href="home.css">
 </head>
 
@@ -90,8 +85,6 @@ $result = $conn->query($sql);
               </div>
 
               <div class="dcontent2">
-                <!-- <i class="fa-regular fa-clock"></i> -->
-                <!-- <i class="fa-solid fa-school"></i> -->
                 <i class="fa-solid fa-user-doctor"></i>
                 <p>&nbsp&nbsp&nbspDegree <?php echo $row["degree"]; ?> </p>
               </div>

@@ -1,6 +1,7 @@
 <?php
 $insert = false;
-if(isset($_POST['username']) &&isset($_POST['email']) &&isset($_POST['password']) && isset($_POST['name']) && isset($_POST['degree']) && isset($_POST['hosp']) && isset($_POST['fees']) && isset($_POST['city']) ) {
+if(isset($_POST['username']) &&isset($_POST['email']) &&isset($_POST['password']) && isset($_POST['name']) && isset($_POST['degree']) && isset($_POST['hosp']) && isset($_POST['fees']) && isset($_POST['city']) ) 
+{
     $server = "localhost";
     $username = "root";
     $password = "";
@@ -31,7 +32,7 @@ if(isset($_POST['username']) &&isset($_POST['email']) &&isset($_POST['password']
 
     if($sql->execute()) {
         $insert = true;
-        header("Location: index.php");
+        header("Location: login.php");
     } else {
         echo "ERROR: ".$con->error;
     }
@@ -61,7 +62,7 @@ if(isset($_POST['username']) &&isset($_POST['email']) &&isset($_POST['password']
 //              $sql->bind_param("ssssss", $name, $degree, $hosp, $fees, $city, $targetFile);
 //              if($sql->execute()) {
 //                  $insert = true;
-//                  header("Location: index.php");
+//                  header("Location: login.php");
 //                  exit(); // Exit to prevent further execution
 //              } else {
 //                  echo "ERROR: " . $con->error;
@@ -130,42 +131,14 @@ if(isset($_POST['username']) &&isset($_POST['email']) &&isset($_POST['password']
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Form </title>
-   <!-- <link rel="stylesheet" href="book.css"> -->
    <link rel="stylesheet" href="preg.css">
+
+   
 </head>
 <body>
 <div class="wrapper">
     <form id="doctorForm" method=post enctype="multipart/form-data" >
-        <!-- <h2> Doctor Registeration Form</h2> 
-
-        <label for="name">Name:</label>
-        <input type="text" id="name" placeholder="name" name="name" required>
-    
-        <label for="degree">Degree:</label>
-        <input type="text" id="degree" placeholder="degree" name="degree" required>
-    
-        <label for="hosp">Hospital:</label>
-        <input type="text" id="hosp" name="hosp" required>
-
-        <label for="fees">Fees:</label>
-        <input type="number" id="fees" name="fees" required>
-
-        <label for="citygrp">City:</label>
-        <select id="citygrp" name="city" >
-             <option value="" selected disabled>Available in these cities only: </option>
-             <option value="pune" > PUNE </option>
-             <option value="jalna" >  JALNA</option>
-        </select>
-
-        <label for="photo">Photo:</label>
-             <input type="file" id="photo" name="photo" accept="image/*" required> 
-    
-        <button type="submit">Submit</button> -->
-
-        <!-- Uodation -->
-
         
-
         <h2>Doctor Registeration Form</h2>
             <div class="input-box">
                  <i class="fas fa-user"></i> 
@@ -208,11 +181,7 @@ if(isset($_POST['username']) &&isset($_POST['email']) &&isset($_POST['password']
 
 
             <button type="submit" class="btn" name="submit" value="submit" onclick="login.php">Submit</button><br>
-            
-            <!-- <div 
-                class="register-link"><p>Don't have an account?<a href="selection.php" > Sign up here.</a></p> 
-            </div> -->
-
+        
                 <div class="register-link">
                 <p>Already had account? <a href="login.php">Login-in</a></p>
                 </div>

@@ -5,18 +5,14 @@ $username = "root";
 $password = "";
 $database = "sydb"; 
 
-// Create connection
 $conn = new mysqli($server, $username, $password, $database);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Get today's date
 $today = date('Y-m-d');
 
-// Query to fetch appointments for today
 $sql = "SELECT * FROM registration WHERE DATE(date) = '$today'";
 $result = $conn->query($sql);
 

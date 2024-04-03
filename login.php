@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <title>Login Form</title>
-    <link rel="stylesheet" href="signstyle.css">
+    <link rel="stylesheet" href="preg.css">
     <script>
         function alertfun(){
             alert("Invalid Pass");
@@ -16,10 +16,7 @@
 
 <body>
     <div class="wrapper">
-        <!-- <div class="img">
-            <img src="plogo.png" class="image" alt="LOGO" style="width:40%">
-        </div> -->
-       
+        
         <form method="post">
 
     <?php
@@ -48,7 +45,6 @@
 
         // Check if the entered password matches the stored password
         if ($enteredPassword == $row['password']) {
-            // Valid credentials, redirect to a new page (e.g., dashboard.php)
 
             if($who == 'doctor')
             {

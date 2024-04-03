@@ -24,13 +24,11 @@
    
    $sql = "INSERT INTO `sydb`.`login` (`who`,`username`, `email`, `password`) VALUES ('$who' ,'$username', '$email', '$password');";
 
-   //   Execute the Query
    if( $con->query($sql) == true )
    {
       // echo "Successfully data entered in database";
       // Flag for Successful insertion
       $insert = true ;
-      // Redirect to index.html after successful form submission
       header("Location: login.php");
    }
    else
@@ -38,7 +36,6 @@
       echo "ERROR $sql <br> $con->error";
    }
    
-   //  Closing the database connection
    $con->close() ;
    }
 ?>
