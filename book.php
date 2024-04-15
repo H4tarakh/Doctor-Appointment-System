@@ -55,7 +55,7 @@ $con->close() ;
     {
      var cont = myForm.contact.value ;
 
-    if(cont.length <= 10)
+    if(cont.length <= 9)
     {
      alert("contact must contain at least 10 letters ");
      myForm.contact.value="";

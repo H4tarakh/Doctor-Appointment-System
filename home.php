@@ -91,7 +91,7 @@ $result = $conn->query($sql);
               <div class="dcontent3">
                 
                 <i class="fa-solid fa-hospital"></i>
-                <p>&nbsp&nbspHospital Rs.<?php echo $row["hosp"]; ?></p>
+                <p>&nbsp&nbspHospital <?php echo $row["hosp"]; ?></p>
               </div>
               <div class="dcontent4">
                 <!-- <i class="fa-solid fa-location-dot"></i> -->

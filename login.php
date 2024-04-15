@@ -75,9 +75,9 @@
                 <i class="fas fa-lock"></i> 
                  <input type="password" placeholder="Password" name="password" required><br>
             </div>
-            <button type="submit" class="btn" name="submit" value="submit" onclick="selection.php">Login</button><br>
+            <button type="submit" class="btn" name="submit" value="submit" onclick="index.php">Login</button><br>
             
-            <div class="register-link"><p>Don't have an account?<a href="selection.php" > Sign up here.</a></p> 
+            <div class="register-link"><p>Don't have an account?<a href="index.php" > Sign up here.</a></p> 
             </label>
              </div>
 

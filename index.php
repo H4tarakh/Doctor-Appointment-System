@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor or Patient?</title>
    
-<link rel="stylesheet" href="selection.css">
+<link rel="stylesheet" href="index.css">
 
 </head>
 <body>
