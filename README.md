@@ -7,10 +7,9 @@ This project aims to create a platform for connecting doctors and patients effic
       </p>
       <p>
         Additionally, patients can also order medicines through the platform, making it a comprehensive solution for both medical consultations and medication needs. 
-      </p>
-      
-      <p>
-        Overall, the platform streamlines the process of scheduling appointments and ordering medicines, enhancing the experience for both doctors and patients.
-      </p>
+ </p>
+           <p>
+ Overall, the platform streamlines the process of scheduling appointments and ordering medicines, enhancing the experience for both doctors and patients.
+              </p>
 <br>
 Author : Hariom Tarakh
